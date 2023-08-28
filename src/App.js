@@ -13,9 +13,9 @@ class App extends Component {
         <h1 tabIndex={4}>
           Hi <em>JSX!</em>
         </h1>
-        <Ciao name={user.firstName} lname={user.lastName} isHi />
+        <Ciao name={user.firstName} lname={user.lastName}/>
         <Ciao name="Alex" />
-        <Ciao name="Tom"  isHi/>
+        <Ciao name="Tom"/>
       </>
     );
   }
