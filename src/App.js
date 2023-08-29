@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import './App.css';
-// import Ciao from './components/Ciao';
 import CiaoList from './components/CiaoList';
 
 class App extends Component {
@@ -56,15 +55,11 @@ class App extends Component {
     this.setState({ users: newUsers, isSortIdUp: !isSortIdUp });
   };
 
-  // createList = ({ firstName, lastName, id }, index) => (
-  //   <Ciao key={id} id={id} name={firstName} lname={lastName} />
-  // );
-
   render() {
     const { users, isSortIdUp, sortUsersByFirstName } = this.state;
     return (
       <>
-        <h1 tabIndex={4}>
+        <h1>
           Hi <em>JSX!</em>
         </h1>
         <div>
@@ -76,8 +71,7 @@ class App extends Component {
             sort by id {isSortIdUp ? 'up' : 'down'}
           </button>
         </div>
-        <CiaoList users={users}/>
-        {/* <section>{users.map(this.createList)}</section> */}
+        <CiaoList users={users} />
       </>
     );
   }

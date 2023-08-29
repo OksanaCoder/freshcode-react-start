@@ -6,10 +6,8 @@ class CiaoList extends Component {
     <Ciao key={id} id={id} name={firstName} lname={lastName} />
   );
   render() {
-    const {users} = this.props;
-    return (
-      <section>{users.map(this.createList)}</section>
-    );
+    const { users } = this.props;
+    return <section>{users.map(this.createList)}</section>;
   }
 }
 
