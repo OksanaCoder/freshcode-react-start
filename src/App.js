@@ -26,10 +26,21 @@ class App extends Component {
     };
   }
 
+  sortUsersById = () => {
+    //отримати масив юзерів
+    const { users } = this.state;
+    //const newUsers = [...users];
+    const newUsers = JSON.parse(JSON.stringify(users));
+    //відсортувати
+    newUsers.sort((a, b) => a.id - b.id);
+    //оновити стан
+    this.setState({ users: newUsers });
+  };
+
   createList = ({ firstName, lastName, id }, index) => (
-    <Ciao key={index} id={id} name={firstName} lname={lastName} />
+    <Ciao key={id} id={id} name={firstName} lname={lastName} />
   );
-  
+
   render() {
     const { users } = this.state;
     return (
@@ -37,6 +48,9 @@ class App extends Component {
         <h1 tabIndex={4}>
           Hi <em>JSX!</em>
         </h1>
+        <div>
+          <button onClick={this.sortUsersById}>sort by id</button>
+        </div>
         {users.map(this.createList)}
       </>
     );
