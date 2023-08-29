@@ -24,19 +24,35 @@ class App extends Component {
         },
       ],
       isSortIdUp: true,
+      //стан для фіксування порядку сортування за іменем
+      isSortFirstNameUp: true,
     };
   }
 
+  sortUsersByFirstName = () => {
+    const { users, isSortFirstNameUp } = this.state;
+    const newUsers = JSON.parse(JSON.stringify(users));
+    newUsers.sort((a, b) => {
+      if (a.firstName > b.firstName) {
+        return isSortFirstNameUp ? 1 : -1;
+      }
+      if (a.firstName < b.firstName) {
+        return isSortFirstNameUp ? -1 : 1;
+      }
+      return 0;
+    });
+    this.setState({ users: newUsers, isSortFirstNameUp: !isSortFirstNameUp });
+  };
   sortUsersById = () => {
     const { users, isSortIdUp } = this.state;
     const newUsers = JSON.parse(JSON.stringify(users));
     newUsers.sort((a, b) => {
-      if(isSortIdUp){
-        return a.id - b.id; 
+      if (isSortIdUp) {
+        return a.id - b.id;
       }
       return b.id - a.id;
     });
-    this.setState({ users: newUsers , isSortIdUp: !isSortIdUp});
+    this.setState({ users: newUsers, isSortIdUp: !isSortIdUp });
   };
 
   createList = ({ firstName, lastName, id }, index) => (
@@ -44,13 +60,17 @@ class App extends Component {
   );
 
   render() {
-    const { users, isSortIdUp } = this.state;
+    const { users, isSortIdUp, sortUsersByFirstName } = this.state;
     return (
       <>
         <h1 tabIndex={4}>
           Hi <em>JSX!</em>
         </h1>
         <div>
+          {/* додати кнопку, яка виконує сортування за іменем */}
+          <button onClick={this.sortUsersByFirstName}>
+            sort by name {sortUsersByFirstName ? 'up' : 'down'}
+          </button>
           <button onClick={this.sortUsersById}>
             sort by id {isSortIdUp ? 'up' : 'down'}
           </button>
