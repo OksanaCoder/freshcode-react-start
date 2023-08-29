@@ -6,24 +6,38 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {
-        id: 1,
-        firstName: 'Brad',
-        lastName: 'Pitt',
-      },
+      users: [
+        {
+          id: 1,
+          firstName: 'Brad',
+          lastName: 'Pitt',
+        },
+        {
+          id: 7,
+          firstName: 'Alex',
+          lastName: 'Varker',
+        },
+        {
+          id: 3,
+          firstName: 'Tom',
+          lastName: 'Rot',
+        },
+      ],
     };
   }
 
+  createList = ({ firstName, lastName, id }, index) => (
+    <Ciao key={index} id={id} name={firstName} lname={lastName} />
+  );
+  
   render() {
-    const {user} = this.state;
+    const { users } = this.state;
     return (
       <>
         <h1 tabIndex={4}>
           Hi <em>JSX!</em>
         </h1>
-        <Ciao name={user.firstName} lname={user.lastName} />
-        <Ciao name="Alex" />
-        <Ciao name="Tom" />
+        {users.map(this.createList)}
       </>
     );
   }
