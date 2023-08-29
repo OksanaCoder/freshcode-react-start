@@ -23,18 +23,20 @@ class App extends Component {
           lastName: 'Rot',
         },
       ],
+      isSortIdUp: true,
     };
   }
 
   sortUsersById = () => {
-    //отримати масив юзерів
-    const { users } = this.state;
-    //const newUsers = [...users];
+    const { users, isSortIdUp } = this.state;
     const newUsers = JSON.parse(JSON.stringify(users));
-    //відсортувати
-    newUsers.sort((a, b) => a.id - b.id);
-    //оновити стан
-    this.setState({ users: newUsers });
+    newUsers.sort((a, b) => {
+      if(isSortIdUp){
+        return a.id - b.id; 
+      }
+      return b.id - a.id;
+    });
+    this.setState({ users: newUsers , isSortIdUp: !isSortIdUp});
   };
 
   createList = ({ firstName, lastName, id }, index) => (
@@ -42,14 +44,16 @@ class App extends Component {
   );
 
   render() {
-    const { users } = this.state;
+    const { users, isSortIdUp } = this.state;
     return (
       <>
         <h1 tabIndex={4}>
           Hi <em>JSX!</em>
         </h1>
         <div>
-          <button onClick={this.sortUsersById}>sort by id</button>
+          <button onClick={this.sortUsersById}>
+            sort by id {isSortIdUp ? 'up' : 'down'}
+          </button>
         </div>
         {users.map(this.createList)}
       </>
