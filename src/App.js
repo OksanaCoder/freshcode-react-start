@@ -1,8 +1,6 @@
 import { Component } from "react";
 import "./App.css";
-import CiaoList from "./components/CiaoList";
-import CiaoSort from "./components/CiaoSort";
-import Hello from "./components/Hello";
+import StopWatchTimeoutNew from "./components/StopWatchTimeoutNew";
 
 class App extends Component {
   constructor(props) {
@@ -65,14 +63,15 @@ class App extends Component {
         {/* <Hello /> */}
 
         {/* додати кнопку, яка виконує сортування за іменем */}
-        <CiaoSort
+        {/* <CiaoSort
           sortUsersByFirstName={this.sortUsersByFirstName}
           isSortIdUp={isSortIdUp}
           isSortFirstNameUp={isSortFirstNameUp}
           sortUsersById={this.sortUsersById}
         />
 
-        <CiaoList users={users} />
+        <CiaoList users={users} /> */}
+        <StopWatchTimeoutNew />
       </>
     );
   }
