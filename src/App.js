@@ -1,6 +1,6 @@
 import { Component } from "react";
 import "./App.css";
-import StopWatchTimeoutNew from "./components/StopWatchTimeoutNew";
+import SignInForm from "./components/SignInForm";
 
 class App extends Component {
   constructor(props) {
@@ -71,7 +71,9 @@ class App extends Component {
         />
 
         <CiaoList users={users} /> */}
-        <StopWatchTimeoutNew />
+        {/* <StopWatchTimeoutNew /> */}
+        {/* <ClickCount /> */}
+        <SignInForm />
       </>
     );
   }

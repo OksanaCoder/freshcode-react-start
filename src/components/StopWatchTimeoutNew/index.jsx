@@ -42,9 +42,8 @@ class StopWatchTimeoutNew extends Component {
   componentDidMount = () => {
     // this.start();
   };
-  componentDidUpdate = () => {
-    this.start();
-  };
+
+  componentDidUpdate(prevProps, prevState) {}
   render() {
     const { time } = this.state;
     return (
