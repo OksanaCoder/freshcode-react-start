@@ -68,7 +68,7 @@ class SignInForm extends Component {
               className={classesLogin}
               value={login}
               onChange={this.handleInput}
-              type="login"
+              type="text"
               name="login"
               placeholder="your login"
             />

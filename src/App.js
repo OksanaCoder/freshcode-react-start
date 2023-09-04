@@ -1,6 +1,8 @@
 import { Component } from "react";
 import "./App.css";
 import SignInForm from "./components/SignInForm";
+import Counter from "./components/Counter";
+import BlockCounter from "./components/BlockCounter";
 
 class App extends Component {
   constructor(props) {
@@ -73,7 +75,8 @@ class App extends Component {
         <CiaoList users={users} /> */}
         {/* <StopWatchTimeoutNew /> */}
         {/* <ClickCount /> */}
-        <SignInForm />
+        {/* <SignInForm /> */}
+        <BlockCounter />
       </>
     );
   }
