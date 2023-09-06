@@ -73,17 +73,28 @@ class SignInForm extends Component {
               placeholder="your login"
             />
           </label>
-
-          <label>
-            <input
-              type="radio"
-              name="radioGroup" // Group name for radio buttons
-              value="option1"
-              checked={selectedOption === "option1"} // Controlled by the component's state
-              onChange={this.handleOptionChange} // Handle radio option changes
-            />
-            Option 1
-          </label>
+          <div>
+            <label>
+              <input
+                type="radio"
+                name="radioGroup" // Group name for radio buttons
+                value="option1"
+                checked={selectedOption === "option1"} // Controlled by the component's state
+                onChange={this.handleOptionChange} // Handle radio option changes
+              />
+              Option 1
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="radioGroup" // Group name for radio buttons
+                value="option2"
+                checked={selectedOption === "option2"} // Controlled by the component's state
+                onChange={this.handleOptionChange} // Handle radio option changes
+              />
+              Option 2
+            </label>
+          </div>
         </div>
         <label>
           <input

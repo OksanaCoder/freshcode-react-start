@@ -75,8 +75,8 @@ class App extends Component {
         <CiaoList users={users} /> */}
         {/* <StopWatchTimeoutNew /> */}
         {/* <ClickCount /> */}
-        {/* <SignInForm /> */}
-        <BlockCounter />
+        <SignInForm />
+        {/* <BlockCounter /> */}
       </>
     );
   }

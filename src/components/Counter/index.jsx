@@ -38,7 +38,6 @@ class Counter extends Component {
       <div>
         <h2>{count}</h2>
         <h2>Step : {step}</h2>
-
         <button onClick={this.handleCount}>
           {isAdd ? "додати" : "відняти"}
         </button>
